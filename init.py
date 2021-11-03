@@ -198,7 +198,20 @@ def clear_table(table_name):
     con.close()
 
 
+# Delete table
+def del_table(table_name):
+    con = sqlite3.connect("animal.db")
+    cur = con.cursor()
+    sqlite_query = (f'''
+        DROP TABLE {table_name}
+    ''')
+    cur.execute(sqlite_query)
+    con.commit()
+    con.close()
+
+
 create_tables()
 # print_tables()
 fill_tables()
+# del_table('animals')
 
