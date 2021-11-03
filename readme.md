@@ -11,3 +11,5 @@ sketch.xlsx - scheme of DB
 
 app.py - simple app. Test req: http://127.0.0.1:5000/233/
 
+Also you can delete old table "animals". Just uncomment "# del_table('animals')" in init.py.
+
