@@ -84,12 +84,13 @@ def create_tables():
     sqlite_query = ('''
         CREATE TABLE outcome(
         Id INTEGER PRIMARY KEY AUTOINCREMENT,
-        animal_id VARCHAR(10),
+        animal_id INT,
         age_upon_outcome VARCHAR(50),
         outcome_month INT,
         outcome_year INT,
         outcome_subtype_id INT,
         outcome_type_id INT,
+        FOREIGN KEY (animal_id) REFERENCES animals_2 (id) ON DELETE RESTRICT,
         FOREIGN KEY (outcome_subtype_id) REFERENCES outcome_subtype (id) ON DELETE RESTRICT,
         FOREIGN KEY (outcome_type_id) REFERENCES outcome_type (id) ON DELETE RESTRICT)
     ''')
